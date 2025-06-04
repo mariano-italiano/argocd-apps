@@ -24,11 +24,13 @@ spec:
     port: 443
     protocol: TCP
     targetPort: https
+  externalIPs:
+  - {{ .Values.controller.service.externalIP }}
   selector:
     app.kubernetes.io/component: controller
     app.kubernetes.io/instance: ingress-nginx
     app.kubernetes.io/name: ingress-nginx
-  type: NodePort
+  type: {{ .Values.controller.service.type }}
 ---
 apiVersion: v1
 kind: Service
