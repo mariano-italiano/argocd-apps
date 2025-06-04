@@ -1,0 +1,7 @@
+controller:
+  replicaCount: 2
+  service:
+    type: LoadBalancer
+  image:
+    repository: quay.io/kubernetes-ingress-controller/nginx-ingress-controller
+    tag: "v1.10.0"
